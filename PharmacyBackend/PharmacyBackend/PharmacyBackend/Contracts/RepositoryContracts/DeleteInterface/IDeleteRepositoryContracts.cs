@@ -1,6 +1,6 @@
 ﻿namespace PharmacyBackend.Contracts.RepositoryContracts.DeleteInterface
 {
-    public interface IDeleteContracts
+    public interface IDeleteRepositoryContracts
     {
         public Task<bool> DeleteEmployeeByIdAsync(int id);
     }

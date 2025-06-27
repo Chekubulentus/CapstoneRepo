@@ -4,7 +4,7 @@ using PharmacyBackend.Models;
 
 namespace PharmacyBackend.Repository.POST
 {
-    public class PostRepository : IPostContracts
+    public class PostRepository : IPostRepositoryContracts
     {
         private readonly PharmacyContext _context;
         public PostRepository(PharmacyContext context)

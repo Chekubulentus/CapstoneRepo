@@ -4,7 +4,7 @@ using PharmacyBackend.Models;
 
 namespace PharmacyBackend.Repository.UpdateRepository
 {
-    public class UpdateRepository : IUpdateContracts
+    public class UpdateRepository : IUpdateRepositoryContracts
     {
         private readonly PharmacyContext _context;
         public UpdateRepository(PharmacyContext context)
