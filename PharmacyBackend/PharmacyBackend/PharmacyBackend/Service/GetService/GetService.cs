@@ -1,6 +1,7 @@
 ﻿using PharmacyBackend.Contracts.RepositoryContracts.GetInterface;
 using PharmacyBackend.Contracts.ServiceContracts.GetInterface;
 using PharmacyBackend.Models;
+using PharmacyBackend.DTOs.EmployeeDTOs;
 
 namespace PharmacyBackend.Service.GetService
 {
@@ -13,14 +14,43 @@ namespace PharmacyBackend.Service.GetService
             _getRepo = getRepo;
         }
 
-        public Task<List<Employee>> GetAllEmployeesAsync()
+        public async Task<IEnumerable<EmployeeDTO>> GetAllEmployeesAsync()
         {
-            throw new NotImplementedException();
+            var employees = await _getRepo.GetAllEmployeesAsync();
+            if (!employees.Any() || employees.Count() == 0)
+                return new List<EmployeeDTO>();
+            var modifEmployees = employees.Select(e => new EmployeeDTO
+            {
+                Id = e.Id,
+                EmployeeCode = e.EmployeeCode,
+                LastName = e.LastName,
+                FirstName = e.FirstName,
+                MiddleName = e.MiddleName,
+                Age = e.Age,
+                Gender = e.Gender,
+                Email = e.Email,
+                Address = e.Address
+            });
+            return modifEmployees;
         }
 
-        public Task<Employee> GetEmployeeByIdAsync(int id)
+        public async Task<EmployeeDTO> GetEmployeeByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var employee = await _getRepo.GetEmployeeByIdAsync(id);
+            if (employee is null)
+                return null;
+            var modifEmployee = new EmployeeDTO
+            {
+                EmployeeCode = employee.EmployeeCode,
+                LastName = employee.LastName,
+                FirstName = employee.FirstName,
+                MiddleName = employee.MiddleName,
+                Age = employee.Age,
+                Gender = employee.Gender,
+                Email = employee.Email,
+                Address = employee.Address
+            };
+            return modifEmployee;
         }
     }
 }

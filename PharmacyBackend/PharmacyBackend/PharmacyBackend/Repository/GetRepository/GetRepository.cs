@@ -1,4 +1,5 @@
-﻿using PharmacyBackend.Contracts.RepositoryContracts.GetInterface;
+﻿using Microsoft.EntityFrameworkCore;
+using PharmacyBackend.Contracts.RepositoryContracts.GetInterface;
 using PharmacyBackend.DataContext;
 using PharmacyBackend.Models;
 
@@ -12,14 +13,14 @@ namespace PharmacyBackend.Repository.GET
             _context = context;
         }
 
-        public Task<List<Employee>> GetAllEmployeesAsync()
+        public async Task<List<Employee>> GetAllEmployeesAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Employees.ToListAsync();
         }
 
-        public Task<Employee> GetEmployeeByIdAsync(int id)
+        public async Task<Employee> GetEmployeeByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Employees.FindAsync(id);
         }
     }
 }

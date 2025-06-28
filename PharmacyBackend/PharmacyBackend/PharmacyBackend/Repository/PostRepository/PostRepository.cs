@@ -1,5 +1,6 @@
 ﻿using PharmacyBackend.Contracts.RepositoryContracts.PostInterface;
 using PharmacyBackend.DataContext;
+using PharmacyBackend.DTOs.EmployeeDTOs;
 using PharmacyBackend.Models;
 
 namespace PharmacyBackend.Repository.POST
@@ -12,9 +13,11 @@ namespace PharmacyBackend.Repository.POST
             _context = context;
         }
 
-        public Task<bool> CreateEmployeeAsync(Employee request)
+        public async Task<bool> CreateEmployeeAsync(Employee request)
         {
-            throw new NotImplementedException();
+            await _context.Employees.AddAsync(request);
+            await _context.SaveChangesAsync();
+            return true;
         }
     }
 }

@@ -12,9 +12,11 @@ namespace PharmacyBackend.Repository.UpdateRepository
             _context = context;
         }
 
-        public Task<bool> UpdateEmployeeAsync(Employee request)
+        public async Task<bool> UpdateEmployeeAsync(Employee request)
         {
-            throw new NotImplementedException();
+            _context.Update(request);
+            await _context.SaveChangesAsync();
+            return true;
         }
     }
 }

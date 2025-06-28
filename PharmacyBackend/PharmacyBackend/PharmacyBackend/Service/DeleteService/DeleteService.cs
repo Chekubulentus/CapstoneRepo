@@ -15,9 +15,12 @@ namespace PharmacyBackend.Service.DeleteService
             _deleteRepo = deleteRepo;
         }
 
-        public Task<bool> DeleteEmployeeByIdAsync(int id)
+        public async Task<bool> DeleteEmployeeByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var deleteEmployee = await _deleteRepo.DeleteEmployeeByIdAsync(id);
+            if (!deleteEmployee)
+                return false;
+            return true;
         }
     }
 }

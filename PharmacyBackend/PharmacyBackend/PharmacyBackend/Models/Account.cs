@@ -1,9 +1,11 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace PharmacyBackend.Models
 {
     public class Account
     {
+        [Key]
         public int Id { get; set; }
         public int AccountCode { get; set; }
         public string Username { get; set; }

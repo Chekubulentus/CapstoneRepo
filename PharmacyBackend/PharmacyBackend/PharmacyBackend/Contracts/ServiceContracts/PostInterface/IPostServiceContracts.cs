@@ -1,9 +1,10 @@
-﻿using PharmacyBackend.Models;
+﻿using PharmacyBackend.DTOs.EmployeeDTOs;
+using PharmacyBackend.Models;
 
 namespace PharmacyBackend.Contracts.ServiceContracts.PostInterface
 {
     public interface IPostServiceContracts
     {
-        public Task<bool> CreateEmployeeAsync(Employee request);
+        public Task<bool> CreateEmployeeAsync(CreateEmployeeRequest request);
     }
 }

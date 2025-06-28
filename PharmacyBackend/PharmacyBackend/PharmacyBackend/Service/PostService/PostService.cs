@@ -1,6 +1,7 @@
 ﻿using PharmacyBackend.Contracts.RepositoryContracts.PostInterface;
 using PharmacyBackend.Contracts.ServiceContracts.PostInterface;
 using PharmacyBackend.Models;
+using PharmacyBackend.DTOs.EmployeeDTOs;
 
 namespace PharmacyBackend.Service.PostService
 {
@@ -13,7 +14,7 @@ namespace PharmacyBackend.Service.PostService
             _postRepo = postRepo;
         }
 
-        public Task<bool> CreateEmployeeAsync(Employee request)
+        public Task<bool> CreateEmployeeAsync(CreateEmployeeRequest request)
         {
             throw new NotImplementedException();
         }

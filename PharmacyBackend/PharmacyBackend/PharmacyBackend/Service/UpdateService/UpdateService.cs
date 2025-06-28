@@ -1,5 +1,6 @@
 ﻿using PharmacyBackend.Contracts.RepositoryContracts.UpdateInterface;
 using PharmacyBackend.Contracts.ServiceContracts.UpdateInterface;
+using PharmacyBackend.DTOs.EmployeeDTOs;
 using PharmacyBackend.Models;
 
 namespace PharmacyBackend.Service.UpdateService
@@ -13,7 +14,7 @@ namespace PharmacyBackend.Service.UpdateService
             _updateRepo = updateRepo;
         }
 
-        public Task<bool> UpdateEmployeeAsync(Employee request)
+        public Task<bool> UpdateEmployeeAsync(UpdateEmployeeRequest request)
         {
             throw new NotImplementedException();
         }
