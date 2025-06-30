@@ -1,6 +1,8 @@
-﻿using PharmacyBackend.Contracts.RepositoryContracts.PostInterface;
+﻿using Microsoft.EntityFrameworkCore;
+using PharmacyBackend.Contracts.RepositoryContracts.PostInterface;
 using PharmacyBackend.DataContext;
 using PharmacyBackend.DTOs.EmployeeDTOs;
+using PharmacyBackend.Helper;
 using PharmacyBackend.Models;
 
 namespace PharmacyBackend.Repository.POST

@@ -24,7 +24,8 @@ namespace PharmacyBackend.Controllers
             var createEmployee = await _postService.CreateEmployeeAsync(request);
             if (!createEmployee)
                 return BadRequest(new EmployeeRequestResponse { Message = "Employee cannot be created. Please try again." });
-            return Ok(new EmployeeRequestResponse { Message = "Employee successfully created." });
+            return Ok(
+                new EmployeeRequestResponse { Message = $"Employee successfully created. " });
         }
 
     }
