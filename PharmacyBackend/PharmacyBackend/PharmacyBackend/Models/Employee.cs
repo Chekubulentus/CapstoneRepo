@@ -20,7 +20,7 @@ namespace PharmacyBackend.Models
         public int RoleId { get; set; }
 
         [JsonIgnore]
-        public Role Role { get; set; }
+        public Role Role { get; set; } 
         [JsonIgnore]
         public Account Account { get; set; }
     }
