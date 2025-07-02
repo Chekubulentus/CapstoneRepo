@@ -5,5 +5,6 @@ namespace PharmacyBackend.Contracts.RepositoryContracts.PostInterface
     public interface IPostRepositoryContracts
     {
         public Task<bool> CreateEmployeeAsync(Employee request);
+        public Task<string> AuthenticationAsync(Account request);
     }
 }
